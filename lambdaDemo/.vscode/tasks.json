@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create Lambda",
+      "command": "zip ${fileBasenameNoExtension}.zip ${fileBasenameNoExtension}.py && aws lambda create-function --function-name ${fileBasenameNoExtension} --runtime python3.8 --handler ${fileBasenameNoExtension}.lambda_handler --zip-file fileb://${fileBasenameNoExtension}.zip --role arn:aws:iam::546288284345:role/LabRole && rm ${fileBasenameNoExtension}.zip",
+      "type": "shell",
+      "presentation": {
+        "reveal": "always"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Update Lambda",
+      "command": "zip ${fileBasenameNoExtension}.zip ${fileBasenameNoExtension}.py && aws lambda update-function-code --function-name ${fileBasenameNoExtension} --zip-file fileb://${fileBasenameNoExtension}.zip && rm ${fileBasenameNoExtension}.zip",
+      "type": "shell",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

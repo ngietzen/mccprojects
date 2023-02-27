@@ -1,6 +1,7 @@
 # MCC Projects
 This repository is a collection of all of my current Macomb Community College AWS projects.
 I have separated each project into its own folder and listed the details of each project below.
+Please contact me with any questions!
 
 # apiDemo
 The apiDemo project is a Python project that demonstrates using the JSONPlaceHolder public API to GET and POST
